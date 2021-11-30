@@ -119,6 +119,9 @@ router.get('/:id/comments', (req, res) => {
                 });
         }
       }) 
+      .catch(err=>{
+        res.status(500).json({ message: "The comments information could not be retrieved" });
+      })
   });
 
  module.exports = router
